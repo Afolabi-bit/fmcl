@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Theme-1-main-bg: hsl(222, 26%, 31%);
+  --Theme-1-keypad-bg: hsl(223, 31%, 20%);
+  --Theme-1-screen-bg: hsl(224, 36%, 15%);
+  --Theme-1-del-reset-bg: hsl(225, 21%, 49%);
+  --Theme-1-del-reset-shadow: hsl(224, 28%, 35%);
+  --Theme-1-equals-bg: hsl(6, 63%, 50%);
+  --Theme-1-equals-shadow: hsl(6, 70%, 34%);
+  --Theme-1-keys-bg: hsl(30, 25%, 89%);
+  --Theme-1-keys-shadow: hsl(28, 16%, 65%);
+  --Theme-1-text: hsl(221, 14%, 31%);
+
+  --Theme-2-main-bg: hsl(0, 0%, 90%);
+  --Theme-2-keypad-bg: hsl(0, 5%, 81%);
+  --Theme-2-screen-bg: hsl(0, 0%, 93%);
+  --Theme-2-del-reset-bg: hsl(185, 42%, 37%);
+  --Theme-2-del-reset-shadow: hsl(185, 58%, 25%);
+  --Theme-2-equals-bg: hsl(25, 98%, 40%);
+  --Theme-2-equals-shadow: hsl(25, 99%, 27%);
+  --Theme-2-keys-bg: hsl(45, 7%, 89%);
+  --Theme-2-keys-shadow: hsl(35, 11%, 61%);
+  --Theme-2-text: hsl(60, 0%, 19%);
+
+  --Theme-3-main-bg: hsl(268, 75%, 9%);
+  --Theme-3-keypad-bg: hsl(268, 71%, 12%);
+  --Theme-3-screen-bg: hsl(268, 71%, 12%);
+  --Theme-3-del-reset-bg: hsl(281, 89%, 26%);
+  --Theme-3-del-reset-shadow: hsl(285, 91%, 52%);
+  --Theme-3-equals-bg: hsl(176, 100%, 44%);
+  --Theme-3-equals-shadow: hsl(177, 70%, 36%);
+  --Theme-3-keys-bg: hsl(268, 47%, 21%);
+  --Theme-3-keys-shadow: hsl(290, 70%, 36%);
+  --Theme-3-text: hsl(52, 100%, 62%);
+  --Theme-3-text-alt: hsl(198, 20%, 13%);
+}
+
+body {
+  background: var(--Theme-1-main-bg);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+    sans-serif;
+  transition: ease 0.7s;
+}
+
+body.theme-2 {
+  background: var(--Theme-2-main-bg);
+}
+
+body.theme-3 {
+  background: var(--Theme-3-main-bg);
+}
+
+button {
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Utility classes for theme changes */
+.transition {
+  transition: ease 0.7s;
+}
+
+.keys-bg {
+  background: var(--Theme-1-keys-bg);
+  color: var(--Theme-1-text);
+  font-size: 25px;
+  font-weight: 700;
+  transition: ease 0.7s;
+  box-shadow: 0 3px 0px var(--Theme-1-keys-shadow);
+}
+
+.theme-2 .keys-bg {
+  background: var(--Theme-2-keys-bg);
+  color: var(--Theme-2-text);
+  box-shadow: 0 3px 0px var(--Theme-2-keys-shadow);
+}
+
+.theme-3 .keys-bg {
+  background: var(--Theme-3-keys-bg);
+  color: var(--Theme-3-text);
+  box-shadow: 0 3px 0px var(--Theme-3-keys-shadow);
+}
+
+.del-reset-bg {
+  background: var(--Theme-1-del-reset-bg);
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: 0 3px 0px var(--Theme-1-del-reset-shadow);
+  transition: ease 0.7s;
+}
+
+.theme-2 .del-reset-bg {
+  background: var(--Theme-2-del-reset-bg);
+  color: white;
+  box-shadow: 0 3px 0px var(--Theme-2-del-reset-shadow);
+}
+.theme-3 .del-reset-bg {
+  background: var(--Theme-3-del-reset-bg);
+  color: white;
+  box-shadow: 0 3px 0px var(--Theme-3-del-reset-shadow);
+}
+
+.toggle-btn,
+.keypad {
+  background: var(--Theme-1-keypad-bg);
+}
+.theme-2 .toggle-btn,
+.theme-2 .keypad {
+  background: var(--Theme-2-keypad-bg);
+}
+.theme-3 .toggle-btn,
+.theme-3 .keypad {
+  background: var(--Theme-3-keypad-bg);
+}
+
+.equals {
+  box-shadow: 0 3px 0 var(--Theme-1-equals-shadow);
+}
+.theme-2 .equals {
+  box-shadow: 0 3px 0 var(--Theme-2-equals-shadow);
+}
+.theme-3 .equals {
+  box-shadow: 0 3px 0 var(--Theme-3-equals-shadow);
+  color: var(--Theme-3-text-alt);
+}
+
+.tg-eq-bg {
+  transition: ease 0.7s;
+  background: var(--Theme-1-equals-bg);
+}
+.theme-2 .tg-eq-bg {
+  background: var(--Theme-2-equals-bg);
+}
+.theme-3 .tg-eq-bg {
+  background: var(--Theme-3-equals-bg);
+}
+
+.container {
+  width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 60px 0 50px;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+h1 {
+  color: white;
+}
+
+.toggle {
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+
+.toggle > span {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.7px;
+}
+
+.toggle p {
+  display: flex;
+  flex-direction: column;
+  width: 55px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.toggle p > span {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;
+  letter-spacing: 12px;
+  padding: 0 5px;
+}
+
+.toggle-btn {
+  width: 100%;
+  height: 18px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.toggle-btn span.dot {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  transition: ease 0.3s;
+}
+
+.theme-2 .toggle-btn span.dot {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.theme-3 .toggle-btn span.dot {
+  left: 39px;
+}
+
+main {
+  margin-top: 23px;
+}
+
+.screen {
+  width: 100%;
+  height: 90px;
+  background: var(--Theme-1-screen-bg);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.theme-2 .screen {
+  background: var(--Theme-2-screen-bg);
+}
+
+.theme-3 .screen {
+  background: var(--Theme-3-screen-bg);
+}
+
+.screen p {
+  color: white;
+  font-size: 35px;
+  width: 100%;
+  text-align: right;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 40px);
+  grid-gap: 15px;
+  border-radius: 7px;
+  padding: 25px;
+}
+
+.keypad button {
+  text-align: center;
+  transition: ease 0.3s;
+}
+
+.keypad button:active {
+  transform: scale(0.9);
+}
+
+.keypad .dot {
+  padding-top: 18px;
+}
+
+.reset {
+  grid-column: 1/3;
+}
+
+.equals {
+  grid-column: 3/5;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.attribution {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.attribution a {
+  color: white;
+  transition: 0.3s;
+}
+
+.attribution a:hover {
+  color: var(--Theme-1-equals-bg);
+}
+
+.theme-2 .attribution {
+  color: var(--Theme-2-text);
+}
+
+.theme-2 .attribution a {
+  text-decoration: none;
+  color: var(--Theme-2-del-reset-bg);
+}
+
+.theme-2 .attribution a:hover {
+  color: var(--Theme-2-equals-bg);
+}
+
+.theme-3 .attribution {
+  color: var(--Theme-3-del-reset-bg);
+}
+
+.theme-3 .attribution a {
+  color: var(--Theme-3-del-reset-bg);
+}
+
+.theme-3 .attribution a:hover {
+  color: var(--Theme-3-del-reset-shadow);
+}
+
+/* Utilities */
+.theme-2 h1,
+.theme-2 .toggle > span,
+.theme-2 .toggle p > span,
+.theme-2 .screen p {
+  color: var(--Theme-2-text);
+}
+
+.theme-3 h1,
+.theme-3 .toggle > span,
+.theme-3 .toggle p > span,
+.theme-3 .screen p {
+  color: var(--Theme-3-text);
+}
+
+@media screen and (max-width: 460px) {
+  .container {
+    width: calc(100% - 50px);
+    padding: 40px 0 30px;
+  }
+
+  .screen p {
+    font-size: 28px;
+  }
+
+  .keypad {
+    grid-template-rows: repeat(5, 30px);
+    grid-gap: 13px;
+  }
+
+  .keys-bg {
+    font-size: 18px;
+  }
+
+  .del-reset-bg {
+    font-size: 12px;
+  }
+}

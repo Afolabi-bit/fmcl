@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="transition">calc</h1>
+        <div class="toggle">
+          <span class="transition">theme</span>
+          <p id="toggle">
+            <span>123</span>
+            <button class="toggle-btn transition">
+              <span class="dot tg-eq-bg"></span>
+            </button>
+          </p>
+        </div>
+      </header>
+      <main>
+        <div class="screen transition">
+          <p class="transition" id="input"></p>
+        </div>
+        <div class="keypad transition">
+          <button class="keys-bg" value="7">7</button>
+          <button class="keys-bg" value="8">8</button>
+          <button class="keys-bg" value="9">9</button>
+          <button class="del-reset-bg" value="del">del</button>
+          <button class="keys-bg" value="4">4</button>
+          <button class="keys-bg" value="5">5</button>
+          <button class="keys-bg" value="6">6</button>
+          <button class="keys-bg" value="+">&plus;</button>
+          <button class="keys-bg" value="1">1</button>
+          <button class="keys-bg" value="2">2</button>
+          <button class="keys-bg" value="3">3</button>
+          <button class="keys-bg" value="-">&minus;</button>
+          <button class="keys-bg dot" value=".">&dot;</button>
+          <button class="keys-bg" value="0">0</button>
+          <button class="keys-bg" value="/">/</button>
+          <button class="keys-bg" value="*">&times;</button>
+          <button class="del-reset-bg reset" value="reset">reset</button>
+          <button class="tg-eq-bg equals" value="equals">&equals;</button>
+        </div>
+        <p class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="https://github.com/JosephAfolabi">Fola</a>.
+        </p>
+      </main>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
